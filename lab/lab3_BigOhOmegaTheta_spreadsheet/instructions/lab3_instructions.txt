@@ -1,0 +1,9 @@
+Take the spreadsheet
+
+BigOhOmegaThetaExample1.ods
+
+BigOhOmegaThetaExample2.ods
+
+for a 3rd order Polynomial and duplicate for the 4 curves depicted as shown
+
+FunctionsToBracket.png
