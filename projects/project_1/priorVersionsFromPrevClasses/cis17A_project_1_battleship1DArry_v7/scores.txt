@@ -1,0 +1,436 @@
+    Score Record #0
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #1
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #2
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #3
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #4
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #5
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #6
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #7
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #8
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #9
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #10
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #11
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #12
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #13
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #14
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #15
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #16
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #17
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #18
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+    Score Record #19
+Max games: 2
+Total rounds in 1 game: 9
+    HOMER
+# of wins:       0
+Ship's Location: 11
+Game board:
+S S S S B S B S B S 
+S S B S B B S S S B 
+    JILLIAN
+# of wins:       2
+Ship's Location: 8
+Game board:
+S S S S S S S S S B 
+S B S S B S S B S S 
+
+ 2
+    MOM
+# of wins:       0
+Ship's Location: 9
+Game board:
+S S B S S S S S S B 
+B S S B B S S S B S 
+    TING
+# of wins:       2
+Ship's Location: 12
+Game board:
+B S B S S B S S S S 
+B S B S S S B B B S 
+
+ S S S B S S S B 
+B S S S B S B S B S 
+
+ion: 6
+Game board:
+ B  B  S  S  S  S  S  S  S  S 
+ S  S  B  S  S  S  S  S  S  S 
+
+    Score Record #18
+Max games: 2
+# of rounds it took to win: 6
+HOMER
+# of wins:      0
+Ship's Location: 10
+Game board:
+ B  B  S  S  S  S  S  S  S  S 
+ S  S  B  S  S  S  S  S  S  S 
+TING
+# of wins:      2
+Ship's Location: 6
+Game board:
+ B  B  S  S  S  S  S  S  S  S 
+ S  S  B  S  S  S  S  S  S  S 
+
+    Score Record #19
+Max games: 2
+# of rounds it took to win: 6
+HOMER
+# of wins:      0
+Ship's Location: 10
+Game board:
+ B  B  S  S  S  S  S  S  S  S 
+ S  S  B  S  S  S  S  S  S  S 
+TING
+# of wins:      2
+Ship's Location: 6
+Game board:
+ B  B  S  S  S  S  S  S  S  S 
+ S  S  B  S  S  S  S  S  S  S 
+
+ S 
+
+    Score Record #19
+Max games: 2
+# of rounds it took to win: 16
+BART
+# of wins:          1
+Ship's Location:   11
+Game board:
+ B  S  S  S  B  B  S  S  S  S 
+ S  S  B  B  S  S  S  S  B  S 
+JILLIAN
+# of wins:          1
+Ship's Location:   10
+Game board:
+ B  S  S  S  B  B  S  S  S  S 
+ S  S  B  B  S  S  S  S  B  S 
+
+ Max # of games: 2
+ Total # of rounds it took to win: 3
+
+ player[0] HOMER
+ # of wins:         2
+ Ship's Location:   8
+ Game board:
+ S  S  B  S  S  B  B  S  S  S 
+ S  B  B  B  S  B  B  S  S  S 
+
+ player[1] TING
+ # of wins:         0
+ Ship's Location:   13
+ Game board:
+ S  S  B  S  S  B  B  S  S  S 
+ S  B  B  B  S  B  B  S  S  S 
+
+ Score Record #19
+ Max # of games: 2
+ Total # of rounds it took to win: 3
+
+ player[0] HOMER
+ # of wins:         2
+ Ship's Location:   8
+ Game board:
+ S  S  B  S  S  B  B  S  S  S 
+ S  B  B  B  S  B  B  S  S  S 
+
+ player[1] TING
+ # of wins:         0
+ Ship's Location:   13
+ Game board:
+ S  S  B  S  S  B  B  S  S  S 
+ S  B  B  B  S  B  B  S  S  S 
+
+  S  S 
+ S  S  S  S  S  S  S  B  B  B 
+
+  S  S 
+ B  B  S  S  B  S  S  S  B  B 
+
+  B  S 
+ S  S  S  S  S  B  B  S  S  B 
+
