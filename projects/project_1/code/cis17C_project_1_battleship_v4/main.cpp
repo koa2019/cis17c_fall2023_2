@@ -1,10 +1,15 @@
 /* File:   main.cpp
  * Author: Danielle 
- * Created: 11-11-23  3 PM
- * Purpose: cis17C_Project_1_battleship_v3
+ * Created: 11-11-23  6:50 PM
+ * Purpose: cis17C_Project_1_battleship_v4
  *  
- * Version 3: 
+ * Version 4: 
  * 
+ *  
+
+ * To do:
+ * implement stack
+ * implement queue 
  */
 
 // System Libraries: 
@@ -22,10 +27,17 @@
 #include <cfloat>  //float maximum
 #include <vector>   // vector
 #include <iterator>
-#include <algorithm>
+#include <algorithm>// shuffle, min
 #include <map>
 #include <set>
 #include <queue>
+#include <random> // used for shuffle
+#include <array> // used for shuffle
+#include <chrono>
+#include <unordered_set>// used for shuffle
+#include <string_view>
+#include <unordered_set>
+#include <unordered_set>//min
 using namespace std;
 
 // User libraries
@@ -35,25 +47,29 @@ using namespace std;
 
 
 // Function prototypes
+string getMin(unordered_set<string>&);//returns min name
 string getName();  // get player 1's name using pass by reference
 unordered_set<string> setP2Names(string,string&);
 unordered_set<string> pushFrntSet(string,string&); 
 map<string, float> setTopPlyrs(unordered_set<string> &);
 void topPlyrs(unordered_set<string> &);
+void pause();
 void prntMapUnO(map<string, float>&);// Prints topPlyrs & hiScores
 void prntList(list<float> &); // High Scores
 void prntStrSet(unordered_set<string>&);// Prints player 1 & player 2's names
 string set2Upper(string name="name"); // convert string to all uppercase letters
+void shuffleThis();//shuffles int, char, string array BUT not a set container
+
+//string pickP2(string [],int);  // randomly picks a number for player 2
+//void fllGArr(char [][9],char [][9],char [], int, int, int &, int&);
+//void cGssArr(const char [][9], const char [][9],const int,const int,int, int); // confirms guess[][] filled correctly             
 
 
 //void banner(string);      // display game 
 //int  binarySrch(string [],string &,int);
-//void cGssArr(const char [][9], const char [][9],const int,const int,int, int); // confirms guess[][] filled correctly             
 //void chckArr(char &);
 //void copyAdd(string [],const int,string[],const int,string);
 //void fileSum(int,int,int,int);
-//void fllGArr(char [][9],char [][9],char [], int, int, int &, int&);
-
 //void hitMiss(bool,int,int);  // hit message for correct guess
 //void hitMiss();        // try again message
 //void instruc(string, const int, int =1); // instructions for players
@@ -61,8 +77,7 @@ string set2Upper(string name="name"); // convert string to all uppercase letters
 //void runMenu(string, char &, char &, int,int,int,int,char [][9],char [][9],
 //             char [][9],char [][9],int,int,int,int,int &,int&,string [],int,
 //             string [],int,vector<string> &);
-//void pause();
-//string pickP2(string [],int);  // randomly picks a number for player 2
+
 //void plyrShpBrd(int,int,const char [][9],const char [][9],const int,const int);
 //void print2DArr(const char [][9],const char [][9],
 //                const char [][9],const char [][9],const int,const int,int &,int &);
@@ -86,10 +101,7 @@ int main(int argc, char** argv) {
     // set random number seed
     srand(static_cast<unsigned int>(time(0)));
 
-//    // declare variables   
-//    ifstream     inFile1; // for reading an existing file
-//    ifstream     inFile2;
-//    ofstream     outFile; // for outputting to a file
+
 
     const int    MIN = 1, // minimum number for rand()
                  MAX = 16; // maximum number for rand()
@@ -119,52 +131,56 @@ int main(int argc, char** argv) {
 //                 p2Win=0, // number of wins player 2 has
 //                 ttlGmes=0,   // sum of both players number of wins
 //                 ttlRnds=0,   // sum of total rounds played
-//                 p1GShps,
-//                 p2GShps,
-//                 numShp1, 
-//                 numShp2, 
-//                 count1, 
-//                 count2,
 //                 winner;
 //    
 //    float        avgRnds;   // average rounds it takes to win
-
-      string p1Name = "Danielle", 
-             name2 = ""; 
-//    char         board1[ROWS][COLS]={};
-//    char         board2[ROWS][COLS]={};
-//    char         guessP1[ROWS][COLS]={};
-//    char         guessP2[ROWS][COLS]={};
-//    
-//    // will be used to fill each player's guess[][]
-//    char choices[SIZE17]={'S','B','S','S','B','S','S','B','S','S','B','S','S','B','S','S','B'};
-//    string p2Names[SIZE7]={"MIKE", "BART", "JANIS", "STEPHANIE", "TING", "VICTOR", "JILLIAN"};   
-//    string names[SIZE8]={};   // create new array to hold player 1 & player 2's names
 //    vector<string> vNames{"VICTOR", "DANI", "STEPHANIE", "MIKE", "BART", "JANIS", "MICHELLE", "JILLIAN"};
-// 
-//    
-    // ***************************************
-    // ****** SET UP GAME STARTS HERE ********
-    // ***************************************
 
+      string p1Name = "GUEST", 
+             name2 = "COMPUTER"; 
    
+  
+                /****************************************/
+                /*        SET UP GAME STARTS HERE       */
+                /*   MOVE THIS SECTION INTO A CLASS     */
+                            //constructGame();
+                /****************************************/
    
     // Set name and Push into set
-    p1Name=getName();  // Set player 1's name to uppercase case    
+       
     unordered_set<string> names = pushFrntSet(p1Name,name2);
     cout << "\nSet Unsorted: Players \n";
     prntStrSet(names);
+
+    // get player 2's name from an array of names
+    p1Name=getName();  // Set player 1's name to uppercase case 
+    name2 = getMin(names);
+    cout << setw(12) << p1Name << " vs " << name2 << "!" << endl;
     
     // Sort & search names   
-    topPlyrs(names);
+    //topPlyrs(names);
     
-//    // open an existing file that holds max number of games a user can play
+    
+    /**************************************************************************/
+    //              Set 2 game boards with ships or blanks
+    /**************************************************************************/
+    // open an existing file that holds max number of games a user can play
+    // declare variables   
+//    ifstream     inFile1; // for reading an existing file
+//    ifstream     inFile2;
+//    ofstream     outFile; // for outputting to a file
 //    //inFile.open("maxNGms.txt");
 //    inFile1.open("board1.txt",ios::in);   
 //    inFile2.open("board2.txt",ios::in);
 //    outFile.open("scores.txt");  // create a file to output to   
 //    
-//    // initialize counters to zero      
+//    // Initialize game board containers and ship counters   
+//    char         board1[ROWS][COLS]={};
+//    char         board2[ROWS][COLS]={};
+//    int numShp1, // Number of ships player 1 has in their array
+//        numShp2, // Number of ships player 2 has in their array
+//        count1, 
+//        count2;    
 //    numShp1=numShp2=count1=count2=0;
 //
 //    // read in data from file and initialize each player's game board[][]
@@ -179,35 +195,36 @@ int main(int argc, char** argv) {
 //            count1++;   // count how many items were read in
 //            inFile2 >> board2[nRows][nCols];
 //            if(board2[nRows][nCols]=='S'){
-//                numShp2++;  // count how many ships player 1 has in their array
+//                numShp2++;  // count how many ships player 2 has in their array
 //            }
 //            count2++;   // count how many items were read in
 //        }        
-//    }       
-//
-
+//    }   
 //   
 //    // fill guess[] [] with choices[]
 //    fllGArr(guessP1,guessP2,choices,ROWS,COLS,p1GShps,p2GShps);     
-//
-//    // show switch menu
-//    runMenu(p1Name,ch,ans,count1,count2,numShp1,numShp2,guessP1,guessP2,board1,board2,
-//       p1GShps,p2GShps,ROWS,COLS,maxGms,winner,p2Names,SIZE7,names,SIZE8,vNames);
 //
 //    
 //    // display game's introduction message
 //    string gameNme = "BATTLE";
 //    banner(gameNme);  
 //    
-//    // get player 2's name from an array of names
-//    p2Name = pickP2(p2Names,SIZE7);
-//    cout << setw(12) << p1Name << " vs " << p2Name << "!" << endl;
+
+//
+//    // show switch menu
+//    runMenu(p1Name,ch,ans,count1,count2,numShp1,numShp2,guessP1,guessP2,board1,board2,
+//       p1GShps,p2GShps,ROWS,COLS,maxGms,winner,p2Names,SIZE7,names,SIZE8,vNames);
 //
 //    pause();
 //    
-//    //***************************************
-//    //******** GAME STARTS HERE**************
-//    //***************************************
+                /****************************************/
+                /*      END GAME CONSTRUCTOR HERE       */   
+                /****************************************/
+    
+    
+        //    //***************************************
+        //    //******** GAME STARTS HERE**************
+        //    //***************************************
 //              
 //    // sets games flag & counting variables to their default values
 //    p1_crrt = p2_crrt = false;     
@@ -351,8 +368,36 @@ int main(int argc, char** argv) {
 }
 
 //*********************************************************************
-/*                              STL                                   */
+/*                              STL                                  */
 //*********************************************************************
+
+// Add a for loop to find the shortest name in names set container
+string getMin(unordered_set<string> &names){        
+    unordered_set<string>::iterator itr = names.begin();
+    itr++;
+    unordered_set<string>::iterator end = names.begin();
+    int n=names.size()-1;
+    std::advance(end, n);//https://stackoverflow.com/questions/20477545/element-at-index-in-a-stdset
+    string last = *end;
+    //cout<<"names.size="<<names.size()<<"  element["<<n<<"]="<<last<<endl;
+    string min = std::min({*itr, last},
+            [](const std::string_view s1, const std::string_view s2)
+            {
+                return s1.size() < s2.size();
+            });
+    cout<<endl<<endl<<"Shortest of \""<< *itr<<"\" and \""<<last<<"\" is \""
+        << min<< "\"\n\n\n";
+    return min;
+}
+
+// randomly picks a name from an array as player 2's name
+//string pickP2(unordered_set<string> &names){    
+//    cout << "\nLocating your opponent online......\n";    
+      //shuffleThis();
+//    string name2=names[rand()%(SIZE7)];     
+//    return name2;
+//}
+
 
 // function controls the sort and search section
 void topPlyrs(unordered_set<string> &names){ 
@@ -466,8 +511,6 @@ string set2Upper(string name){
     return temp;
 }
 
-
-
 // Print map (key,value) pairs of topPlyrs & high scores
 void prntMapUnO(map<string, float> &map){
     int i=1;
@@ -499,6 +542,25 @@ void prntStrSet(unordered_set<string> &set){
     cout<<endl<<endl;
 }
 
+// pause screen before game starts
+void pause(){    
+    cout << "\nPress enter to continue. ";
+    cin.ignore();
+    cin.get();   
+}
+
+//shuffles int, char, string array BUT not a set container
+void shuffleThis(){
+    //Shuffle https://www.educba.com/c-plus-plus-shuffle/
+    //Shuffle doesn't work with set<>names
+    array<int,8> shuf {19,24,37,42,54,76,58,53};
+    //array<char,6> shuf {'A', 'B', 'C', 'D', 'E', 'F'};
+    unsigned num = chrono::system_clock::now().time_since_epoch().count();
+    shuffle (shuf.begin(), shuf.end(), default_random_engine(num));
+    cout << "The numbers after shuffling are:";
+    for (auto& x: shuf) cout << ' ' << x;
+    cout << '\n';
+}
 
 //*********************************************************************
 //                      Array Functions  
@@ -758,22 +820,7 @@ void prntStrSet(unordered_set<string> &set){
 //    prntArr(board,ROWS,COLS);
 //    
 //}
-//
-//// randomly picks a name from an array as player 2's name
-//string pickP2(string p2Names[], int SIZE7){
-//    
-//    cout << "\nLocating your opponent online......\n";    
-//    string name2=p2Names[rand()%(SIZE7)];     
-//    return name2;
-//}
-//
-//// pause screen before game starts
-//void pause(){    
-//    cout << "\nPress enter to continue. ";
-//    cin.ignore();
-//    cin.get();   
-//}
-//
+
 ////  prompt user  
 //void runMenu(string p1Name, char &ch, char &ans, int count1,int count2,int numShp1,int numShp2,
 //             char guessP1[][9],char guessP2[][9],char board1[][9],char board2[][9],
@@ -845,42 +892,6 @@ void prntStrSet(unordered_set<string> &set){
 //    cout << endl << "You Both Missed. Try Again..." << endl << endl;
 //}
 
-
-
-
-//// randomly fill guess[][] until at least one of the player's has 3 ships in their array
-//void fllGArr(char guessP1[][9],char guessP2[][9],char choices[],int ROWS,int COLS,int &p1GShps, int &p2GShps){
-//    int size=17;
-//    p1GShps=p2GShps=0;  // initialize both players number of ships to zero
-//    bool minMet;        // minimum number of ships==3
-//
-//    do{
-//        minMet=false;   // set flag
-//
-//        for(int gRow=1; gRow<ROWS; gRow++){
-//            for(int gCol=1; gCol<COLS; gCol++){
-//
-//                // automatically set player 1's guess[][] randomly from choices[] 
-//                guessP1[gRow][gCol]=choices[rand()%size]; // saves either a 'S' or 'B' 
-//
-//                // track how many ships player 1's array has
-//                if(guessP1[gRow][gCol]=='S'){
-//                    p1GShps++;                    
-//                    if(p1GShps==3) minMet=true;   // reassign value to flag                                           
-//                }
-//                // automatically set player 2's guess[][] randomly from choices[] 
-//                guessP2[gRow][gCol]=choices[rand()%size]; 
-//
-//                // track how many ships player 1's array has
-//                if(guessP2[gRow][gCol]=='S'){
-//                    p2GShps++; 
-//                   if(p2GShps==3) minMet=true;   // reassign value to flag
-//                }
-//            }        
-//        }       
-//    } while(!minMet); 
-//}
-//
 //// confirm data that was read in is even and contains at least 3 ships
 //void fileSum(int count1, int count2, int numShp1, int numShp2){   
 //    cout << endl << setw(3)<<" " << "Read in " << setw(6)<< " " << "P1 Board" << setw(5)<< " "<< "P2 Board" << endl;
@@ -908,21 +919,6 @@ void prntStrSet(unordered_set<string> &set){
 //            cout << "Would you like to confirm it was a hit? ";
 //            cin >> ans;
 //}
-//
-//// display data from both player's guess arrays. 
-//void cGssArr(const char guessP1[][9], const char guessP2[][9],
-//             const int ROWS,const int COLS, int p1GShps, int p2GShps){
-//    
-//    cout << "\nConfirming Guess arrays are random and have at least 3 S in one array\n";
-//    cout << setw(4) << " " << "P1 Guesses"<<endl; 
-//    prntArr(guessP1,ROWS,COLS);
-//    cout <<"\nP1 # Ships : " << p1GShps <<endl<<endl;
-//    
-//    cout << setw(4) << " " << "P2 Guesses\n";
-//    prntArr(guessP2,ROWS,COLS);
-//    cout << endl << "P2 # Ships : " << p2GShps << endl<<endl;         
-//}
-//
 //// binary search 
 // int binarySrch(string names[], string &name, int SIZE8){
 //    

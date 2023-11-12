@@ -38,6 +38,8 @@ using namespace std;  //STD Name-space where Library is compiled
 //Global Constants not Variables
 //Math/Physics/Science/Conversions/Dimensions
 
+void fllGArr(char [][9],char [][9],char [], int, int, int &, int&);
+
 //Function Prototypes
 unordered_set<string> setP2Names(string,string&);
 unordered_set<string> pushFrntSet(string,string&); 
@@ -60,27 +62,82 @@ int main(int argc, char** argv) {
                  SIZE8 = 8;
     const int    ROWS = 3,
                  COLS = 9;   // number of cols in 2D array
-    const int    SIZE17=17;    // choice array size
+    const int    SIZE17=17;    // choice array size    
+       
+//    char    ans, // answer  
+//            ch,                 
+//            p1Guess=0, // player 1 guess
+//            p2Guess, // player 2 guess
+//            p1Ship1, // player 1 ship number 1
+//            p2Ship1; // player 2 ship number 1
     
-    string p1Name = "Danielle", 
-           name2 = "";         
-   
     
-    // Push string into set
-    unordered_set<string> names = pushFrntSet(p1Name,name2);
-    //cout << "\nSet Unsorted: Players \n";
-    //prntStrSet(names);
+    int     p1GShps,
+            p2GShps;
+    char    guessP1[ROWS][COLS]={};
+    char    guessP2[ROWS][COLS]={}; 
+    // Used to fill each player's guess[][]
+    char choices[]={'S','B','S','S','B','S','S','B','S','S','B','S','S','B','S','S','B'};
     
-    // Sort & search names   
-    topPlyrs(names);
- 
-  
-
+    // Fill guess[][] with choices[]
+    fllGArr(guessP1,guessP2,choices,ROWS,COLS,p1GShps,p2GShps);    
+    
+    // Confirm Guess[][] filled correctly
+    //cGssArr(guessP1, guessP2,ROWS,COLS,p1GShps,p2GShps);
+    
+    
     cout<<endl;
     return 0;
 }
 
 /**********  Function Implementations  **************/
+// randomly fill guess[][] until at least one of the player's has 3 ships in their array
+void fllGArr(char guessP1[][9],char guessP2[][9],char choices[],int ROWS,int COLS,int &p1GShps, int &p2GShps){
+    int size=17;
+    p1GShps=p2GShps=0;  // initialize both players number of ships to zero
+    bool minMet;        // minimum number of ships==3 for each player's guess container
+
+    do{
+        minMet=false;   // set flag
+
+        for(int gRow=1; gRow<ROWS; gRow++){
+            for(int gCol=1; gCol<COLS; gCol++){
+
+                // automatically set player 1's guess[][] randomly from choices[] 
+                guessP1[gRow][gCol]=choices[rand()%size]; // saves either a 'S' or 'B' 
+
+                // track how many ships player 1's array has
+                if(guessP1[gRow][gCol]=='S'){
+                    p1GShps++;                    
+                    if(p1GShps==3) minMet=true;   // reassign value to flag                                           
+                }
+                // automatically set player 2's guess[][] randomly from choices[] 
+                guessP2[gRow][gCol]=choices[rand()%size]; 
+
+                // track how many ships player 1's array has
+                if(guessP2[gRow][gCol]=='S'){
+                    p2GShps++; 
+                   if(p2GShps==3) minMet=true;   // reassign value to flag
+                }
+            }        
+        }       
+    } while(!minMet); 
+}
+//
+//// display data from both player's guess arrays. 
+//void cGssArr(const char guessP1[][9], const char guessP2[][9],
+//             const int ROWS,const int COLS, int p1GShps, int p2GShps){
+//    
+//    cout << "\nConfirming Guess arrays are random and have at least 3 S in one array\n";
+//    cout << setw(4) << " " << "P1 Guesses"<<endl; 
+//    prntArr(guessP1,ROWS,COLS);
+//    cout <<"\nP1 # Ships : " << p1GShps <<endl<<endl;
+//    
+//    cout << setw(4) << " " << "P2 Guesses\n";
+//    prntArr(guessP2,ROWS,COLS);
+//    cout << endl << "P2 # Ships : " << p2GShps << endl<<endl;         
+//}
+//
 
 //*********************************************************************
 /*                              STL                                   */
