@@ -1,13 +1,20 @@
 /* File:    main.cpp
  * Author:  Danielle 
- * Created: 11-13-23  3 PM
- * Purpose: project1_convertArrays_to_STL_v7
+ * Created: 11-14-23  3 PM
+ * Purpose: project1_convertArrays_to_STL_v8
  *         
  * Note:   Converts arrays to STL containers before adding it
  *         to cis17C_Project_1_battleship_v6
  * 
- * version 7: 
- * Moving STL functions to Game class
+ * version 8: 
+    * Changed queue nShips to deque and used random access iterators to print it forward and backwards. 
+    * Convert int *indx to a deque for Game class 
+    * Filled a list with integers 0 to member variable: size and then shuffled indx in shuffleThis(deque<int>) 
+    * Problem: Couldn’t get shuffle or random_shuffle to work with an unordered set. 
+    * Declared Game and User destructors virtual
+    * Completed Iterators off project checklist. 
+    * Checklist is complete. 
+    * Problem: Deleted excel and word desktop apps from my laptop
  * 
  * To do:
  * 
