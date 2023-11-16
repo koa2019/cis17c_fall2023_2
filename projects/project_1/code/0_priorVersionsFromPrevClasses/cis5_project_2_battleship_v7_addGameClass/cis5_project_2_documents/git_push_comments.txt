@@ -1,0 +1,51 @@
+Created 2 files to represent ships or blank spots on the gameboard.
+Read in both files and filled two 2-Dimensional arrays, and counted how 
+many ships each board on them.
+Printed out number of characters and ships read in from both files.
+Printed out both 2D arrays.
+
+
+v4
+Created 2 new 2D arrays for each player's guesses.
+Initialized them to random S(ship) or B(blank).
+Displayed each player's game board and their opponent's guess for each index.
+
+add the guess[][] and board[][] back into the game and removed
+the int variables that use to represent each player's 
+guess and their ships location.
+added a menu to display summary of successfully file data read in,
+function displays the contents of all four 2D arrays.
+added a function that passes 2D arrays with using a global variale. 
+Global vars are not allowed on this project.
+
+v5
+so many changes! Removed main do..while(). Changed 2D array loops 
+to start at 1 instead of zero. changed rowIndx & colIndx to int instead of chars.
+Removed maxGms from being read from file. maxGms is initialized to the player
+who has the most amount of wins based on comparing each player's board to their
+opponents board. Moved the bool isReady() to run each time after a player 
+gets a hit. Added a runMenu()
+
+v5
+added binarySearch() to find a string in names[]; 
+Put all the search and sort functions into a void topPlyrs().
+Added that function to the runMenu().
+
+v6
+changed sortSel() to a vector selSort(); 
+Edited runMenu() and topPlyrs() to accept
+and pass a vector.
+
+v6
+created an overloaded printArr[] for char[][]. 
+Replaced all the printing double for loops with the 
+new printArr[];
+
+v6
+created confirmArr9() to ask if player wants to confirm 
+a correct guess by looking at the arrays. 
+Added a flowchart and finished the main().
+
+v6
+had to add a second array that held scores within the
+topPlyrs() and then print out parallel arrays.

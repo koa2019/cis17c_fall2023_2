@@ -35,8 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/Game.o \
-	${OBJECTDIR}/User.o \
+	${OBJECTDIR}/MySTL.o \
 	${OBJECTDIR}/main.o
 
 
@@ -64,15 +63,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/project1_convertarrays_to_stl_v8.exe:
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/project1_convertarrays_to_stl_v8 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/Game.o: Game.cpp nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/MySTL.o: MySTL.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Game.o Game.cpp
-
-${OBJECTDIR}/User.o: User.cpp nbproject/Makefile-${CND_CONF}.mk
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/User.o User.cpp
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MySTL.o MySTL.cpp
 
 ${OBJECTDIR}/main.o: main.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}

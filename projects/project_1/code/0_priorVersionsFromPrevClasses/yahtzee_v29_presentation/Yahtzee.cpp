@@ -38,6 +38,10 @@ Yahtzee::Yahtzee() {
         string str1 = "Player " + str2;
         player[indx[i]] = new User(str1); 
     }
+    
+    // Confirms you can access aggregate class in Yahtzee
+    //Yahtzee::scorecard[0].printScoreCard();
+    //scorecard[1].printScoreCard();
         
 }
 
