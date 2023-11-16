@@ -1,0 +1,137 @@
+
+//STL Function Prototypes
+void fillGuess();
+void getMaxLoop()
+//void reverse(stack<int>&);
+//void insert_at_bottom(stack<int>&,int);
+// Array Function prototypes
+void menu();
+
+
+//*********************************************************************
+/*                       STL Functions                               */
+//*********************************************************************
+
+
+// Recursive function to print stack elements
+// from bottom to top without changing their order
+// https://www.geeksforgeeks.org/print-stack-elements-from-bottom-to-top/
+void Game::fillGuess(){
+    int     p1GShps=0,// # ships in p1 guess container
+            p2GShps=0;// # ships in p2 guess container
+    // Used to fill each player's guess[][]
+    char choices[]={'b','B','S','S','B','s','S','B','S','B','B','s','S','B','S','b'};
+    
+    stack<char> guessP1;    
+    int n = sizeof(choices)/sizeof(choices[0]); 
+    cout<<"Stack Container\n";
+    //cout<<"choices size = "<<n<<endl;
+    for(int i=0; i<n;i++){
+        //shuffleThis();
+        guessP1.push(choices[rand()%n]);
+    }
+        
+    // Print stack filled with random guesses
+    //PrintStack(guessP1);
+    //cout<<"\nstack guessP1.size = "<<guessP1.size()<<endl;
+    stack<char> temp;
+    while (guessP1.empty() == false)
+    {
+        temp.push(guessP1.top());
+        guessP1.pop();
+    }       
+   
+    cout<<setw(15)<<" "<<"Player 1 Guesses Board"<<endl; 
+    cout<<setw(5)<<" "<<"A1 B1 C1 D1 E1 F1 G1 H1 A2 B2 C2 D2 E2 F2 G2 H2\n"<<setw(5)<<" ";
+    while (temp.empty() == false)
+    {        
+        char t = temp.top();
+        if(t=='S'||t=='s'){p1GShps++;}
+        cout<<t<<"  ";
+        temp.pop();
+ 
+        // To restore contents of
+        // the original stack.
+        guessP1.push(t);  
+    }    
+    //Need at least 3 ships to make sure there's at least win
+    cout<<"\nP1 numShips: "<<p1GShps<<endl;
+}
+
+void getMaxLoop(){
+ //Find max with for loop
+    string firstPlace="", currntName="";
+    float maxScore=0.0f, currntMax=0.0f;
+    std::map <string, float>::iterator itr = hiScores.begin();
+    std::map <string, float>::iterator next = ++itr;
+    maxScore=itr->second;
+    cout<<endl<<endl<<"Looking for highest score\n\n";
+    for(itr=hiScores.begin(); itr!=hiScores.end(); itr++){
+        //cout<< itr->first  <<" > "<< next->first  <<" ? \n"
+            //<< itr->second <<" > "<< next->second <<" ? \n";
+        currntMax=std::max(itr->second, next->second);
+        if(maxScore<currntMax){
+            //firstPlace = //currntMax->first;   
+            maxScore=currntMax; 
+        }
+        //cout<<"\tmax: "<<currntMax<<endl;        
+    }
+    cout<<"MaxScore = "<<maxScore<<endl;
+    
+}
+
+///****************************Reverse Stack*************************************/
+//// Below is a recursive function
+//// that inserts an element
+//// at the bottom of a stack.
+////https://www.geeksforgeeks.org/reverse-a-stack-using-recursion/
+//void Game::insert_at_bottom(stack<int>& st, int x)
+//{
+// 
+//    if (st.size() == 0) {
+//        st.push(x);
+//    }
+//    else {
+// 
+//        // All items are held in Function Call
+//        // Stack until we reach end of the stack
+//        // When the stack becomes empty, the
+//        // st.size() becomes 0, the above if
+//        // part is executed and the item is
+//        // inserted at the bottom
+// 
+//        int a = st.top();
+//        st.pop();
+//        insert_at_bottom(st, x);
+// 
+//        // push allthe items held in
+//        // Function Call Stack
+//        // once the item is inserted
+//        // at the bottom
+//        st.push(a);
+//    }
+//}
+//// Below is the function that
+//// reverses the given stack using
+//// insert_at_bottom()
+//void Game::reverse(stack<int>& st)
+//{
+//    if (st.size() > 0) {
+// 
+//        // Hold all items in Function
+//        // Call Stack until we
+//        // reach end of the stack
+//        int x = st.top();
+//        st.pop();
+//        reverse(st);
+// 
+//        // Insert all the items held
+//        // in Function Call Stack
+//        // one by one from the bottom
+//        // to top. Every item is
+//        // inserted at the bottom
+//        insert_at_bottom(st, x);
+//    }
+//    return;
+//}
+///****************************Reverse Stack*************************************/

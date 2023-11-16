@@ -19,6 +19,9 @@ ScoreCard::ScoreCard() {
     upperScore = 0;
     lowerScore = 0;
     
+    //ScoreCard::dice.getValue();
+    //ScoreCard::Dice.getValue();
+    
     for (int i = 0; i < NUM_CATGRY; i++) {
         scores[i] = -1;
         isSelected[i] = 0;

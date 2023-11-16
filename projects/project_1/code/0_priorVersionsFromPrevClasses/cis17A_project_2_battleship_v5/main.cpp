@@ -32,9 +32,9 @@ using namespace std;  //STD Name-space where Library is compiled
 
 //User Libraries
 #include "Score.h"
-#include "PlayScore.h"
-#include "HighScores.h"
-#include "ChoicesTemplate.h"
+#include "PlayScore.h"  // forward class declaration for HighScores class
+#include "HighScores.h" // is friends with PlayScore class
+#include "ChoicesTemplate.h" // Converted Choices class to a template
 
 
 //Global Constants not Variables
@@ -184,12 +184,8 @@ int main(int argc, char** argv) {
         
         nGmsLft--;
         
-        try {           
-            score.setTtlGmes(nGmsLft);
-            
-        } catch(Score::NegativeGames){
-            cout<<"Error. Negative games.\n";
-        }
+        try {score.setTtlGmes(nGmsLft);}            
+        catch(Score::NegativeGames){cout<<"Error. Negative games.\n";}        
         
         score.prntScore();
          
@@ -202,7 +198,7 @@ int main(int argc, char** argv) {
         
     } // ends while(nGmsLft> ZERO)
     
-   
+    // Game ends & Prints each player's game board
     cout<<"\n\n\t\t"<<player[indx[0]]->getName()<<"'s Game Board\n";
     player[indx[0]]->printGBoard();       
     cout<<"\t\t"<<player[indx[1]]->getName()<<"'s Game Board\n";

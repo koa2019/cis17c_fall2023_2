@@ -1,80 +1,80 @@
 Record  0 
- B B b b S s S S S B
- b b b S B S b s B b
+ B b S b b S S S b B
+ s b S B S b S S B s
 
 Record  1 
- b B B s b S b s B B
- S b b B S S S S S b
+ b S S S B S s S b S
+ b B s S b b s S B b
 
 Record  2 
- S s s S S b s s b B
- s S B S s S b B S b
+ s S s b S S b S s s
+ B b b S S S s S S b
 
 Record  3 
- s b b S b S B S b S
- S S b s S S S S s s
+ s b b S S s b S s S
+ b b b B B S b b B s
 
 Record  4 
- b s S S b s S b B b
- B b B b b b B B S s
+ b s s S s B B S b S
+ b S b S S s S S b B
 
 Record  5 
- S b b S s b s S S B
- b S S S B S b S S b
+ b s s S s S s S B S
+ b s b S S B S S b b
 
 Record  6 
- b s b S b S b S S B
- S B S S s S S S S S
+ S S b b s S B s b B
+ b s S b s B S B S B
 
 Record  7 
- s s b S s S B s S B
- S S b B S B B s b S
+ S s S b S b S S s S
+ S b b B B b S b B S
 
 Record  8 
- S S S s S b B s s s
- S b S S b S S B b B
+ b S s s s S b B S B
+ S S s S b S S S S b
 
 Record  9 
- S B B s b B s s B B
- S s S s B s s b b b
+ S s S b b B B S B B
+ B B b s B S s b S S
 
 Record 10 
- S S S b S b b b b b
- S B S S S S S B B S
+ s S S s b b S b S b
+ B b S S S b S B b S
 
 Record 11 
- s s s S s S s B B b
- b S b b b S s S b S
+ B B S B S S s B B b
+ b B s S B s S B S B
 
 Record 12 
- B S B b S b s S S s
- S b S b S s s B b s
+ B b S B S B b b S S
+ B S S S S b b b S b
 
 Record 13 
- b b S S b b S S b s
- B S b B s s b S S b
+ b S b S S s B B S S
+ b b B b S s B b b S
 
 Record 14 
- S S s S B s b S B S
- B B S S s B s S S s
+ S s b S S S B S b S
+ S s B b S b S b s b
 
 Record 15 
- S S b B s B B b S B
- s S s S b b s b B S
+ S S b S S s b B S b
+ B S S s s B b S B s
 
 Record 16 
- S b B s S B b b b S
- s b S s S S s b S S
+ S B S s b S S b S s
+ S b S s b S B S S b
 
 Record 17 
- s b S S s s b B s s
- B S S S S S b b B B
+ b S b B S S b s S b
+ b s B B B b B b s s
 
 Record 18 
- b b s b b S b s S s
- s b b S B B S S B b
+ B B s b S b S b b S
+ S b b S b s b b S S
 
 Record 19 
- B S B S B b S S b S
- s B B b B B b s S B
+ S s b B s B S b S S
+ b B S S b b b b S s
 

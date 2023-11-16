@@ -3,7 +3,9 @@
  * Author:  Danielle F
  * Created: 04-24-23 @7 PM
  * Purpose:  yahtzee_v29_presentation
-  
+   
+ Note to self: make Scorecard class aggregate Dice class correctly.
+ 
 Comments to User:
  * For ease of use, when you login in as a user or admin I have printed  
    their login info to the screen. Type it in when prompted.  

@@ -7,11 +7,12 @@
  *         to cis17C_Project_1_battleship_v6
  * 
  * version 8: 
+    * Changed Game class to MySTL
     * Changed queue nShips to deque and used random access iterators to print it forward and backwards. 
-    * Convert int *indx to a deque for Game class 
+    * Convert int *indx to a deque for MySTL class 
     * Filled a list with integers 0 to member variable: size and then shuffled indx in shuffleThis(deque<int>) 
     * Problem: Couldn’t get shuffle or random_shuffle to work with an unordered set. 
-    * Declared Game and User destructors virtual
+    * Declared MySTL and User destructors virtual
     * Completed Iterators off project checklist. 
     * Checklist is complete. 
     * Problem: Deleted excel and word desktop apps from my laptop
@@ -50,7 +51,7 @@
 using namespace std;  //STD Name-space where Library is compiled
 
 //User Libraries
-#include "Game.h"
+#include "MySTL.h"
 
 //Global Constants not Variables
 //Math/Physics/Science/Conversions/Dimensions
@@ -59,7 +60,7 @@ int main(int argc, char** argv) {
     // set random number seed
     srand(static_cast<unsigned int>(time(0))); 
     
-    Game game;
+    MySTL mystl;
     //menu();  
     //concepts();
     //constructor();    
