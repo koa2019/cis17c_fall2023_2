@@ -8,6 +8,7 @@
 #include "Dice.h"         // aggregates Dice class
 #include "ScoreCard.h"   // aggregates ScoreCard class
 #include "User.h"       // aggregates User class
+#include "Board.h"
 
 // Global constants for Yahtzee Class
 const int MINPLAYRS = 2;
@@ -22,6 +23,8 @@ private:
     int nPlayer;         // Player inputs how many players
     int *indx = nullptr; // Keeps track of each player during during the game
     User **player = nullptr;   // Aggregates instance of User Class. Array of User's
+    Board guesBrd[MINPLAYRS];//replacing Yahtzee::scorecard[MINPLAYRS]
+    Board board[MINPLAYRS];//replacing Yahtzee::finalSC[MINPLAYRS]
     ScoreCard scorecard[MINPLAYRS];   // Aggregates instance of ScoreCard class
     ScoreCard finalSC[MINPLAYRS];     // Aggregates instance of ScoreCard class
       
@@ -38,6 +41,7 @@ public:
     bool startGame(User &,const long);
     void play(int i,int &);
     void setNPlayer();
+    //void setP1Winner(Board [], string []);
     void setP1Winner(ScoreCard [], string []);
     bool isNewHiScore(User &,const long);
     void selectDice(int);

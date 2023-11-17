@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>Admin.h</itemPath>
       <itemPath>Battleship.h</itemPath>
+      <itemPath>Board.h</itemPath>
       <itemPath>Dice.h</itemPath>
       <itemPath>MySTL.h</itemPath>
       <itemPath>ScoreCard.h</itemPath>
@@ -21,6 +22,7 @@
                    projectFiles="true">
       <itemPath>Admin.cpp</itemPath>
       <itemPath>Battleship.cpp</itemPath>
+      <itemPath>Board.cpp</itemPath>
       <itemPath>Dice.cpp</itemPath>
       <itemPath>MySTL.cpp</itemPath>
       <itemPath>ScoreCard.cpp</itemPath>
@@ -64,6 +66,10 @@
       <item path="Battleship.cpp" ex="false" tool="0" flavor2="0">
       </item>
       <item path="Battleship.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Board.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Board.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Dice.cpp" ex="false" tool="0" flavor2="0">
       </item>
@@ -129,6 +135,10 @@
       <item path="Battleship.cpp" ex="false" tool="0" flavor2="0">
       </item>
       <item path="Battleship.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Board.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Board.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Dice.cpp" ex="false" tool="0" flavor2="0">
       </item>

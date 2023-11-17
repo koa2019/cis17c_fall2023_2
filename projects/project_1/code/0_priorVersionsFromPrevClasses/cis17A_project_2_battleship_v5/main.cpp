@@ -134,7 +134,7 @@ int main(int argc, char** argv) {
     //score->player = new Player[score->nPlayrs]; 
     Player **player;     
     
-    //creating an array of Player poiners
+    //creating an array of Player pointers
     player = new Player*[score.getNumPlayrs()];
     
     //array of index to keep track of each player

@@ -6,7 +6,7 @@
  * version 7: 
  * Keep User, Admin classes, BUT model cis5_battleship_v6 like Yahtzee class.
  * cis5_battleship doesn't have any classes, so I need to update it.
- * 
+ * Need to randomize board because board2 isn't being read in anymore
  * version 6: Combined:
  *                     1. cis17b_yahtzee_v29_presentation
  *                     2. convertArray_to_STL_v8
@@ -56,7 +56,7 @@ using namespace std;  //STD Name-space where Library is compiled
 //User Libraries
 #include "User.h"
 #include "Admin.h"
-#include "Yahtzee.h"
+//#include "Yahtzee.h"// Runs the game as a guest
 #include "MySTL.h"
 #include "Battleship.h"
 
@@ -65,26 +65,20 @@ using namespace std;  //STD Name-space where Library is compiled
 
 //Function Prototypes
 void getUserLogin();
-void menu();
-void menu2();
-void runGameOnly();
-
+void menu(); // Menu for Admin,User login, play game as a guest
+void menu2();// Run STL concepts or play Battleship with Admin/User features
+void runBattleship();// If you want to just test the game out, then run this block of code
+   
 //Code Begins Execution Here with function main
 int main(int argc, char** argv) {
     
     //Set random number seed once here
-    srand(static_cast<unsigned int>(time(0)));
-    
-    //menu(); //Menu for Admin,User login, play game as a guest
-    //runGameOnly(); // Runs the game as a guest
-    //MySTL mystl; // Run to test MySTL class functions
+    srand(static_cast<unsigned int>(time(0)));    
     //menu2();  
-    // If you want to just test the game out, then run this block of code
-    User guest("Ashoka"); 
-    cout<<"\ninside main() guest user object looks like: ";
-    guest.printUsr();
-    Battleship game2;                                                  
-    game2.startGame(guest,10);
+    //menu(); // Menu for Admin,User login, play game as a guest
+    //MySTL mystl; // Run to test MySTL class functions
+    runBattleship();// If you want to just test the game out, then run this block of code
+    
     return 0;
 }
 
@@ -93,7 +87,7 @@ void menu2(){
     int choice = 0;
     cout<<"\n\n\tMenu\n"
         <<"1: Run CIS 17C concepts\n"
-        <<"2: Play Yahtzee\n"
+        <<"2: Play Battleship\n"
         <<"Enter a number: ";;
     cin>>choice;
     cin.ignore();    
@@ -104,13 +98,12 @@ void menu2(){
     }
 }
 
-
 // If you want to just test the game out, then run this block of code
-void runGameOnly(){
+void runBattleship(){
     User guest("Ashoka"); 
     cout<<"\ninside main() guest user object looks like: ";
     guest.printUsr();
-    Yahtzee game2;                                                  
+    Battleship game2;                                                  
     game2.startGame(guest,10);
 }
 
@@ -123,8 +116,9 @@ void menu(){
         <<"1: Admin Login\n"
         <<"2: Sign Up\n"
         <<"3: User Login\n"
-        <<"4: Play Yahtzee as a guest\n"
-        <<"5: Reset binary and text files (for testing purposes)\n"
+        <<"4: Play Battleship as a guest\n"
+        <<"5: Run STL concept functions\n"    
+        <<"6: Reset binary and text files (for testing purposes)\n"
         <<"9: Exit\n"
         <<"Enter a number: ";
         cin>>choice;
@@ -152,14 +146,18 @@ void menu(){
             }             
             case 4: // Play Yahtzee as a guest
             {          
-                User guest("Guest"); 
-                //cout<<"\ninside main() guest user object looks like: ";
+                User guest("Clone Trooper66"); 
+                cout<<"\ninside main() guest user object looks like: ";
                 guest.printUsr();
-                Yahtzee game2;                                                  
+                Battleship game2;                                                  
                 game2.startGame(guest,0);
                 break;
             }
-            case 5:   // Reset files by erasing binary & text file, then creates records in 
+            case 5: // Run to showcase MySTL class functions
+            { 
+                MySTL mystl; 
+            }
+            case 6:   // Reset files by erasing binary & text file, then creates records in 
             {        // User binary with records. Use after testing & altering records.    
                 user.readInputFile(); 
                 break;

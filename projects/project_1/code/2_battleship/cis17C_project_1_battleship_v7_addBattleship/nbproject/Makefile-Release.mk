@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/Admin.o \
 	${OBJECTDIR}/Battleship.o \
+	${OBJECTDIR}/Board.o \
 	${OBJECTDIR}/Dice.o \
 	${OBJECTDIR}/MySTL.o \
 	${OBJECTDIR}/ScoreCard.o \
@@ -78,6 +79,11 @@ ${OBJECTDIR}/Battleship.o: Battleship.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Battleship.o Battleship.cpp
+
+${OBJECTDIR}/Board.o: Board.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Board.o Board.cpp
 
 ${OBJECTDIR}/Dice.o: Dice.cpp
 	${MKDIR} -p ${OBJECTDIR}

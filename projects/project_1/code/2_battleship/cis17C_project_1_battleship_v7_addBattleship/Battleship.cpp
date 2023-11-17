@@ -64,17 +64,18 @@ bool Battleship::startGame(User &user, const long recordLoc){
 
         // Player 1's turn begins
         prntRound(rnd);       
-        finalSC[indx[0]].setRound(rnd+1);
+        //finalSC[indx[0]].setRound(rnd+1);
         play(indx[0], rnd); 
 
         // If user selected 2 player game, then begin player 2's turn
         if(nPlayer > 1 && rnd < MAXHITS) {             
-            finalSC[indx[1]].setRound(rnd+1);
+            //finalSC[indx[1]].setRound(rnd+1);
             play(indx[1], rnd); 
         }       
      } // ends round for(rnd < 13 )            
 
-    setP1Winner(finalSC, name);  // Print player's final scorecards
+    p1Winner=true;
+    //setP1Winner(finalSC, name);  // Print player's final scorecards
     
     if(!p1Winner){ // if player 1 is NOT winner        
         cout<<"\n\nGood Game!\n"; 
@@ -254,8 +255,8 @@ bool Battleship::isNewHiScore(User &user, const long recordLoc){
 void Battleship::setP1Winner(ScoreCard finalSC[], string name[]){
    
     
-    finalSC[0].setRound(MAXHITS);            // Set round to last round for each player, so it'll 
-    finalSC[1].setRound(MAXHITS);            // check if they hit upperScore bonus in printFinalSC()
+    //finalSC[0].setRound(MAXHITS);            // Set round to last round for each player, so it'll 
+    //finalSC[1].setRound(MAXHITS);            // check if they hit upperScore bonus in printFinalSC()
     finalSC[0].printFinalSC( name[0] ); // Print player 1's final scorecard 
     
     if(nPlayer > 1) { finalSC[1].printFinalSC( name[1] ); }  // Print player 2's final scorecard 
