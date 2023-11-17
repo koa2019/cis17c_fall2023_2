@@ -49,7 +49,7 @@ public:
     //    void upper(string &); // changes string to all uppercase letters
     //    void getName(string &);  // get player 1's name using pass by reference
     //    void copyAdd(string [],const int,string[],const int,string);
-    //    string pickP2(string [],int);  // randomly picks a number for player 2
+        string pickP2(string [],int);  // randomly picks a number for player 2
     //    int  binarySrch(string [],string &,int);
     //    void sortSel(vector<string> &);
     //    void sortBub(string [],int);       // sort names
@@ -65,7 +65,7 @@ public:
     //    void prntArr(string []);  // prints names[]
     //    void rBanner(int &);      // display the round number
     //    void sBanner(string,string,string,int,int);   // display scoreboard banner
-    //    void pause();
+        void pause();
 };
 #endif /* BATTLESHIP_H */
 

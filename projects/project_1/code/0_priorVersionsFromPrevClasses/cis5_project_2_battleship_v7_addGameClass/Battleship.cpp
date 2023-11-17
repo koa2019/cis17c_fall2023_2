@@ -51,26 +51,26 @@ Battleship::Battleship() {
         // display game's introduction message
         banner("BATTLE");  
         
-    //    // get player 2's name from an array of names
-    //    p2Name = pickP2(p2Names,SIZE7);
-    //    cout << setw(12) << p1Name << " vs " << p2Name << "!" << endl;
-    //
-    //    pause();
-    //    
-    //    //***************************************
-    //    //******** GAME STARTS HERE**************
-    //    //***************************************
-    //              
+        // get player 2's name from an array of names
+        p2Name = pickP2(p2Names,SIZE7);
+        cout << setw(12) << p1Name << " vs " << p2Name << "!" << endl;
+    
+        pause();
+        
+        //***************************************
+        //******** GAME STARTS HERE**************
+        //***************************************
+                  
 
-    //   
+       
     //    // loops until a player correctly guesses opponents ship location
     //    while((!p1_crrt) && (!p2_crrt)){
     //
     //        rBanner(round); // display round number banner
-    //
-    //        //*************** Player 1's Guess ************* 
-    //        //**********************************************        
-    //      
+    
+            //*************** Player 1's Guess ************* 
+            //**********************************************        
+          
     //        instruc(p1Name,MAX);    // display instructions to player 1          
     //
     //        // set variables to the their 1st array's indices
@@ -370,23 +370,22 @@ Battleship::Battleship() {
 //    }
 //    cout << endl;
 //}
-//
-//
-//// randomly picks a name from an array as player 2's name
-//string Battleship::pickP2(string p2Names[], int SIZE7){
-//    
-//    cout << "\nLocating your opponent online......\n";    
-//    string name2=p2Names[rand()%(SIZE7)];     
-//    return name2;
-//}
-//
-//// pause screen before game starts
-//void Battleship::pause(){    
-//    cout << "\nPress enter to continue. ";
-//    cin.ignore();
-//    cin.get();   
-//}
-//
+
+
+// randomly picks a name from an array as player 2's name
+string Battleship::pickP2(string p2Names[], int SIZE7){    
+    cout << "\nLocating your opponent online......\n";    
+    string name2=p2Names[rand()%(SIZE7)];     
+    return name2;
+}
+
+// pause screen before game starts
+void Battleship::pause(){    
+    cout << "\nPress enter to continue. ";
+    cin.ignore();
+    cin.get();   
+}
+
 ////  prompt user  
 //void Battleship::runMenu(string p1Name, char &ch, char &ans, int count1,int count2,int numShp1,int numShp2,
 //             char guessP1[][9],char guessP2[][9],char board1[][9],char board2[][9],
