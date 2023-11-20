@@ -40,6 +40,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/ChoicesTemplate.o \
 	${OBJECTDIR}/MySTL.o \
 	${OBJECTDIR}/Player.o \
+	${OBJECTDIR}/TopPlyrsBrd.o \
 	${OBJECTDIR}/main.o
 
 
@@ -91,6 +92,11 @@ ${OBJECTDIR}/Player.o: Player.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Player.o Player.cpp
+
+${OBJECTDIR}/TopPlyrsBrd.o: TopPlyrsBrd.cpp nbproject/Makefile-${CND_CONF}.mk
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TopPlyrsBrd.o TopPlyrsBrd.cpp
 
 ${OBJECTDIR}/main.o: main.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}
