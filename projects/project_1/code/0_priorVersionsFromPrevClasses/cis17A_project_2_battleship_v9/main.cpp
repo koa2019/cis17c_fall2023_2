@@ -1,18 +1,27 @@
 /* File:    main.cpp
  * Author:  Danielle F
- * Created: 12-16-2022 @ 10:13 PM
+ * Created: 11-18-2023 @ 10:13 PM
  * Purpose: cis17a_project_2_battleship_v9
  *          I want to use this version for cis17c project 1
  * 
  * version 9:
- * Applied: 
+ * STL Applied to Player.h: 
  * set2Upper() that has transform to Player::setName()
  * askName()
+ * getMin()
  * 
+ * STL Applied to Player.h:
+ * deque<string>, prntDeq(),prntDeqRev()
+ * 
+ * STL Applied to TopPlyrBrd.h:
+ * Copied the top player functions from MySTL 
+ * 
+ * 
+ * Made setter functions  and cleaned up MySTL default contrcutor
+ * Created TopPlyrsBrd and copied appropriate MySTL functions 
 
 
  * To do: cis 17c
- * BUG! Player::setName(string)
  * Player destructor not going off
  * Battleship::prntScore()
  * Player **guessArr
@@ -45,14 +54,15 @@ using namespace std;  //STD Name-space where Library is compiled
 //User Libraries
 #include "Battleship.h"
 #include "MySTL.h"
-//#include "PlayScore.h"  // forward class declaration for HighScores class
-//#include "HighScores.h" // is friends with PlayScore class
+#include "TopPlyrsBrd.h"
+#include "PlayScore.h"  //rename to PlyrWins forward class declaration for HighScores class
+#include "HighScores.h" //rename to HSPrize is friends with PlayScore class
 //#include "ChoicesTemplate.h" // Converted Choices class to a template
 
 //Global Constants not Variables
 
 //Function Prototypes
-//void copyConstFriendDemo();//showcase cis 17a project 2 concepts
+void copyConstFriendDemo();//showcase cis 17a project 2 concepts
 void menu2();// Run STL concepts or play Battleship with Admin/User features
 
 
@@ -65,7 +75,9 @@ int main(int argc, char** argv) {
     //menu2();
     //MySTL mystl; // Run to test MySTL class functions  
     Battleship game;// create new instances of Battleship class 
-    
+    TopPlyrsBrd topPlyrs;
+    // Move this to a PlayScore.cpp
+    //copyConstFriendDemo();  // Demo cis17a project 2 concepts    
     return 0;
 }
 
@@ -85,50 +97,56 @@ void menu2(){
     }
 }
 
- //copyConstFriendDemo();  // Demo cis17a project 2 concepts    
-//void copyConstFriendDemo(){
-//    //********************************************
-//    //Copy Constructor & static member Demo
-//    //********************************************
-//    PlayScore parent1("Dad");
-//    PlayScore parent2("Mom");
-//    cout<<"Copy parent1 to parent2\n";
-//    cout<<"\nPlayScore class Static member = "<<parent1.getStatic()<<endl;   
-//    cout<<"\nParent1: "<<parent1.getName()<<endl;
-//    cout<<"Parent2: "<<parent2.getName()<<endl;
-//    parent2=parent1;
-//    cout<<"Parent1: "<<parent1.getName()<<endl;
-//    cout<<"Parent2: "<<parent2.getName()<<endl;    
-//     
-//    //********************************************
-//    //         Friend Class Demo
-//    //********************************************
-//    HighScores hscore;  
-//    cout<<"HighScore Earnings "<<hscore.getHSMoney()<<endl;
-//    hscore.setHSMony(200);
-//    cout<<"HighScore         +1 = "<<hscore.getHSMoney()<<endl;
-//    ++hscore;   //increase money by $1
-//    parent1.setPSMoney(50);
-//    parent1.addMoney1(55);     
-//    cout<<"\n\n   Friend Class Demo:\n"
-//        <<"HighScore Earnings "<<hscore.getHSMoney()<<endl         
-//        <<"parent1 Earnings   "<<parent1.getPSMoney()<<endl
-//        <<setw(18)<<" "<<"+1001\n";
-//    parent1.addMoney(1001, hscore); 
-//    cout<<"HighScore          "<<hscore.getHSMoney()<<endl          
-//        <<"parent1            "<<parent1.getPSMoney()<<endl<<endl;
-//    --hscore;   //decrease money by $1
-//    --hscore;   //decrease money by $1
-//    cout<<"HighScore Earnings "<<hscore.getHSMoney()<<endl;
-//    
-//    
-//    //********************************************
-//    //         Choices Template Demo
-//    //********************************************
-////    cout<<"\tChoices Template\n";
-////    ChoicesTemplate<char> tempArr(20);
-////    for(int i=0; i<MAX+1; i++) {
-////        cout<<setw(3)<<tempArr[i];       
-////    }
-//     
-//    }
+ 
+void copyConstFriendDemo(){
+    //********************************************
+    //Copy Constructor & static member Demo
+    //********************************************
+    cout<<"\n\nCopy Constructor and static member Demo:\n"; 
+    cout<<"****************************************\n\n";
+    PlayScore parent1("Dad",66.01);
+    cout<<"Static PlayScore::nPlayScore = "<<parent1.getStatic()<<endl;   
+    PlayScore parent2("Mom");    
+    cout<<"Static PlayScore::nPlayScore = "<<parent2.getStatic()<<endl<<endl;    
+    cout<<"Copy parent1 to parent2"<<fixed<<setprecision(2);
+    cout<<"\nParent1: "<<parent1.getName()<<" "<<parent1.getPSMoney()<<endl;
+    cout<<"Parent2: "  <<parent2.getName()<<" "<<parent2.getPSMoney()<<endl;
+    parent2=parent1;
+    cout<<"Parent1: "<<parent1.getName()<<" "<<parent1.getPSMoney()<<endl;
+    cout<<"Parent2: "<<parent2.getName()<<" "<<parent2.getPSMoney()<<endl;    
+    cout<<"Static PlayScore::nPlayScore = "<<parent1.getStatic()<<endl<<endl<<endl;
+    
+    
+    //********************************************
+    //         Friend Class Demo
+    //********************************************
+    HighScores hscore;  
+    cout<<"Friend Class Demo:\n";
+    cout<<"******************\n\n";
+    cout<<"HighScore Pot          : "<<setw(5)<<hscore.getHSMoney()<<endl;
+    hscore.setHSMony(200);
+    cout<<"HighScore +$200        : "<<hscore.getHSMoney()<<endl;
+    ++hscore; //increase money by $1
+    cout<<"HighScore operator++   : "<<hscore.getHSMoney()<<endl;       
+    cout<<parent1.getName()<<" Earnings           : "<<parent1.getPSMoney()<<endl;
+    parent1.addMoney1(hscore.getHSMoney());     
+    cout<<parent1.getName()<<" + HighScore Pot    : "<<parent1.getPSMoney()<<endl;
+    cout<<parent1.getName()<<" +$102 to total prize money\n";
+    //Calls friend class function to reset HighScore::totPrzMony
+    parent1.addMoney(102, hscore); 
+    cout<<"New HighScore Pot      : "<<hscore.getHSMoney()<<endl;
+    --hscore;   //decrease money by $1
+    cout<<"HighScore operator--   : "<<hscore.getHSMoney()<<endl;    
+    cout<<"HighScore Pot          : "<<hscore.getHSMoney()<<endl;
+    
+    
+    //    //********************************************
+    //    //         Choices Template Demo
+    //    //********************************************
+    ////    cout<<"\tChoices Template\n";
+    ////    ChoicesTemplate<char> tempArr(20);
+    ////    for(int i=0; i<MAX+1; i++) {
+    ////        cout<<setw(3)<<tempArr[i];       
+    ////    }
+    //     
+}

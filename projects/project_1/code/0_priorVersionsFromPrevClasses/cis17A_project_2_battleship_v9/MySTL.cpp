@@ -1,22 +1,33 @@
 #include "MySTL.h"
 #include <bits/stdc++.h> 
-#include <algorithm>
+#include <iterator>
+#include <algorithm>// shuffle, min
+#include <map>
+#include <set>
+#include <queue>
+#include <random> // used for shuffle
+#include <array> // used for shuffle
+#include <chrono>
+#include <unordered_set>// used for shuffle
+#include <string_view>
+#include <unordered_set>//min
+#include <sstream> // stringstream
+#include <list>
 using namespace std;  //STD Name-space where Library is compiled
-
 //**********************************************************
 //                  Default Constructor
 //**********************************************************
 MySTL::MySTL(){
     
-    size=10;
+    deqSize=10;
     nShips=3;
     setName(set2Upper("Santa"));
-    name2=set2Upper("Computer");
+    //name2=set2Upper("Computer");
    
     
     // Create array of index to keep track of each player   
-    indx.assign(size,0);// fill constructor. Assigns new contents to the deque container, replacing its current contents
-    for(int i=0; i<size;i++){ indx.at(i)=i; } //deque has to already be initialized
+    indx.assign(deqSize,0);// fill constructor. Assigns new contents to the deque container, replacing its current contents
+    for(int i=0; i<deqSize;i++){ indx.at(i)=i; } //deque has to already be initialized
     cout<<"\n\nDeque default iterator is a Random Access Iterator\n";
     cout<<"Deque before shuffle:\t";
     for(auto &d : indx){cout<<d<<" ";} cout<<endl;
@@ -89,7 +100,7 @@ void MySTL::start(){
     pause();
  
     // Used min() to set player 2's name
-    name2 = getMin();
+    string name2 = getMin();
     cout<<"\t"<<name<<" vs "<<name2<< "!\n";  
     //pause();      
        
@@ -182,15 +193,14 @@ void MySTL::setTopPlyrs(){
 
 
 /*****************************************************************/
-// 		Set player 1's name and convert to uppercase letters
+// 	Set player 1's name and convert to uppercase letters
 /*****************************************************************/
 string MySTL::askName(){ 
     string str="Danielle";
     cout << "\nPlayer 1: Enter your name\n";
     cin>>str; //change to ostream_iterator
-    cin.ignore();
-    cout<<str<<" ";
-    cout << endl; 
+    //cin.ignore();
+    cout<<str<<" "; //cout << endl; 
     return set2Upper(str);  //convert user input into capital letters
 }
 
@@ -447,11 +457,11 @@ void MySTL::shuffleThis(){
 
 
 /*****************************************************************/
-// 			Fills container with sequential numbers [0,size]
+// 			Fills container with sequential numbers [0,deqSize]
 /*****************************************************************/
  void MySTL::setDeqWthSize(){
     list<int> nums;
-    for(int i=0; i<size;i++){ nums.push_back(i); }
+    for(int i=0; i<deqSize;i++){ nums.push_back(i); }
     //for(auto &d : nums){ cout<<d<<endl; } cout<<endl;
     deque<int> deq(nums.begin(), nums.end());
     for(auto &d : deq){cout<<d<<endl;}
