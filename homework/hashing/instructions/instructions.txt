@@ -1,0 +1,18 @@
+GeneralHashFunctionsCPP.zip  <- Here are some simple Hashfunctions I give in CSC 7 you can use.
+
+Download GeneralHashFunctionsCPP.zip  <- Here are some simple Hashfunctions I give in CSC 7 you can use.
+
+Create 3 large arrays to search, where the size will be variable up until it reaches your machines limit.
+
+They should contain the same information since we are going to compare 3 different algorithms.You are going to do operational studies on them to determine their order.
+O(N), O(log(N)), and O(1)?
+Search algorithms.Linear, Binary, Hash
+You should know which algorithms are what order,now you are going to prove it.
+Fill the 3 arrays with the same information but use random strings of say size 20 characters.Or use 1 array and 3 separate programs.
+You will perform searches on the arrays given strings that are in the array and those that are not. Make this about a 50-50 mix, or at least know what the mix is.
+a) Perform the linear search, record the time. If it does it very quickly you will need to adjust the size and the number of loops over the data till you get a few seconds. Then start increasing N. The object is to see how time increases as N increases.
+b) Perform the same task with the Binary Search.Obviously using Binary the data first has to be ordered. This is an O(N^2) to O(NlogN) function just on it's own but it only needs to be done once.  Don't take this time into account. Yes, I know that's bad, but I just want to show specific algorithm differences not including the sort.
+c) Perform the same task with the Hash function.This is tricky since you have to develop the Hash function. Also, I want you to use chaining. This makes it easy since there are no collisions and you don't have to use algorithms for collisions, just use a linked list when a collision occurs.
+When done, plot the results of each algorithm as Time vs. N It should be easy to conclude the order of the algorithm.
+
+Submit here.

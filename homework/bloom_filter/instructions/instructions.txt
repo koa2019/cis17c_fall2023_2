@@ -1,0 +1,18 @@
+Utilize the simple example.
+
+https://llimllib.github.io/bloomfilter-tutorial/
+
+with example hashes http://www.partow.net/programming/hashfunctions/
+
+
+Insert 4 names into the bit vector.
+
+Test to see how well it performs the look-up.
+
+Now, create your own bloom filter in netbeans, just like the example.
+
+Randomly choose names/randomly create names and pass through the filter.
+
+How does the Prob of false positives compare with the calculated.
+
+Submit here

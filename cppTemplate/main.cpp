@@ -6,16 +6,16 @@
 
 //System Libraries
 #include <bits/stdc++.h> 
-#include <iostream>
-#include <cstdlib>
-#include <string>
-#include <iomanip>
-#include <cctype>
-#include <fstream>
-#include <climits> // char and int maximums
-#include <cfloat>  //float maximum
-#include <cmath>
-#include <algorithm>
+//#include <iostream>
+//#include <cstdlib>
+//#include <string>
+//#include <iomanip>
+//#include <cctype>
+//#include <fstream>
+//#include <climits> // char and int maximums
+//#include <cfloat>  //float maximum
+//#include <cmath>
+//#include <algorithm>
 using namespace std;  //STD Name-space where Library is compiled
 
 //User Libraries
