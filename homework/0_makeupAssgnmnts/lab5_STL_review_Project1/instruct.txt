@@ -1,0 +1,19 @@
+Here are some references to the Standard Template Library along with your book.
+
+Containers to know  Pair, List, Stack, Queue, Set, Map, etc....
+
+Algorithms to know  Shuffle, Sort, Find, Min, Max, etc...
+
+Of course, the iterators/pointers work hand in hand with the Algorithms to span the containers.
+
+Your Project 1, Game that you will develop will utilize this library so you are to become familiar with how to interface and use the STL
+
+http://www.cppstdlib.com/  The other book you were to get for the class.
+
+http://www.josuttis.com/libbook/toc.html  The containers, iterators, algorithms
+
+https://www.geeksforgeeks.org/cpp-stl-tutorial/  A tutorial for the STL library
+
+http://www.josuttis.com/libbook/algolist.pdf A cheat sheet references the algorithms to the book
+
+Take the tutorial, and create/run as many of netbeans projects with the containers and algorithms I have stated above.

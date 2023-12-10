@@ -31,6 +31,7 @@ int main(int argc, char** argv) {
     //Set random number seed once here
     srand(static_cast<unsigned int>(time(0)));
     //rand()%90+10;//2 digit numbers    
+    //char ch = 65+(rand()%26); //A-Z[65,90]
     
     //Declare variables here       
     
@@ -45,5 +46,10 @@ int main(int argc, char** argv) {
     //Display the results
     return 0;
 }
+//******************************************************************************
+//                  Function Implementations  
+//******************************************************************************
 
-/**********  Function Implementations  **************/
+//******************************************************************************
+//              
+//******************************************************************************
