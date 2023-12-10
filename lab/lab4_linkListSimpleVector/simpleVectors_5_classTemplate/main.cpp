@@ -1,13 +1,18 @@
 /* File:    main.cpp
- * Author:  Danielle F
- * Created: 10-22-232023 @11 PM
- * Purpose: Builds off homework>simpleVectors assignment. Starting from v4
+ * Author:  Danielle 
+ * Created: 10-22-2023 @11 PM
+ * Purpose: Builds off Lehr's homework>simpleVectors assignment. Starting from v4
 
  * Input: 10
  * Output:  M N Q N A N I R. See expectedOutput.PNG
   
  * Version 5: 
+ * Fixed logic bug in pshBack(). It needed an else conditional for when
+   the arraySize is not maxed out.
  * Modify the SimpleVector to 2x or 1/4x when hitting the arraySize limit.
+ 
+ * To do:
+ * Replace array with Linked list class object
  */
 
 //System Libraries
@@ -84,11 +89,11 @@ public:
 template <class T>
 void SimpleVector<T>::pshFrnt(T val) 
 {
-    //Check if array size is maxed out then double ArraySize    
+    // if array size is maxed out then double ArraySize    
     int size=arraySize;
     if(numOccup==arraySize){
-        size=arraySize*2;
-        arraySize=size;      
+        size=arraySize*2; // Double size of array 
+        arraySize=size;   // Reset class member variable    
     }
     
     // Create & initialize a new bigger temporary Template array
@@ -106,7 +111,7 @@ void SimpleVector<T>::pshFrnt(T val)
      
     // Delete aptr and then Copy tempPtr address to aptr. 
     delete [] aptr; //delete [] this->aptr;
-    aptr=tempPtr; //this->aptr=tempPtr;        
+    aptr=tempPtr; //this->aptr=tempPtr;  
 }
 
 
@@ -119,30 +124,34 @@ template <class T>
 void SimpleVector<T>::pshBack(T val)
 {
     cout<<"pushing back.... "<<val<<endl;
-    //Check if array size is maxed out or not   
+    // if array size is maxed out, then double its size   
     int size=arraySize;
     if(numOccup==arraySize){
         size=arraySize*2;
         arraySize=size;      
+    
+        cout<<"numOccup = "<<numOccup<<" ArraySize = "<<arraySize<<endl;
+
+        // Create & initialize a new bigger temporary Template array
+        T *tempPtr = new T[size]; //[arraySize+1]; 
+
+        // Reset last element in array to val
+        tempPtr[numOccup]=val;
+
+        // Copy aptr contents to tempPtr starting at index 0 
+        for(int count = 0; count < arraySize; count++)
+          { tempPtr[count] = aptr[count]; }
+
+        //Increase each counter by 1
+        incrNumOccup(); 
+
+        // Copy tempPtr to aptr. 
+        delete [] aptr;
+        aptr=tempPtr;   
+        
+    } else { // Add new element to the back of the container
+       aptr[arraySize++]=val; 
     }
-    cout<<"numOccup = "<<numOccup<<" ArraySize = "<<arraySize<<endl;
-    
-    // Create & initialize a new bigger temporary Template array
-    T *tempPtr = new T[size]; //[arraySize+1]; 
-    
-    // Reset last element in array to val
-    tempPtr[numOccup]=val;
-    
-    // Copy aptr contents to tempPtr starting at index 0 
-    for(int count = 0; count < arraySize; count++)
-      { tempPtr[count] = aptr[count]; }
-  
-    //Increase each counter by 1
-    incrNumOccup(); 
-    
-    // Copy tempPtr to aptr. 
-    delete [] aptr;
-    aptr=tempPtr;   
 }
 
 //*********************************************************************
@@ -324,7 +333,7 @@ int main(int argc, char** argv) {
     //Declare Variables
     int size;
     cout<<"Input the Size of the Array 10-100"<<endl;
-    //cin>>size;
+    cin>>size;
     size=10;
     vector<char> vec(size);     
     SimpleVector<char> sv(size);

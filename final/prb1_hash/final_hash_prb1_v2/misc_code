@@ -1,0 +1,69 @@
+switch(str[i]){
+            case 'A': case 'B': case 'C':{ num=2; break;}
+            case 'D': case 'E': case 'F':{ num=3; break;}
+            case 'G': case 'H': case 'I':{ num=4; break;}   
+            case 'J': case 'K': case 'L':{ num=5; break;}
+            case 'M': case 'N': case 'O':{ num=6; break;}
+            case 'P': case 'Q': case 'R': case 'S':{ num=7; break;}
+            case 'T': case 'U': case 'V': { num=8; break;}
+            case 'W': case 'X': case 'Y': case 'Z':{ num=9; break;}
+        } 
+
+--------------------------------------------------------------------------------
+
+
+char h2(string str){
+    char ch=' ';
+    for(int i=0;i<str.size();i++){ 
+        switch(str[i]){
+            case 'A': case 'B': case 'C':{ ch=50; break;}
+            case 'D': case 'E': case 'F':{ ch=51; break;}
+            case 'G': case 'H': case 'I':{ ch=52; break;}   
+            case 'J': case 'K': case 'L':{ ch=53; break;}
+            case 'M': case 'N': case 'O':{ ch=54; break;}
+            case 'P': case 'Q': case 'R': case 'S':{ ch=55; break;}
+            case 'T': case 'U': case 'V': { ch=56; break;}
+            case 'W': case 'X': case 'Y': case 'Z':{ ch=57; break;}
+        }
+    }
+    //cout<<static_cast<int>(ch)<<endl;
+    return ch;
+}
+
+--------------------------------------------------------------------------------
+    const int SIZE=512;
+    int num=0;  
+    vector<int> vec;
+    vector<int>::iterator it;
+    
+    for(int i=0;i<SIZE;i++){   
+        num = rand()%899+100; //3 digit number  
+            vec.push_back(num);        
+    }
+    for(int i=0;i<vec.size();i++){ 
+        cout<<vec[i]<<" ";
+        if(i%10==9){cout<<endl;}
+    } cout<<endl;
+
+--------------------------------------------------------------------------------
+
+for(int i=0;i<SIZE;i++){          
+        
+//        do {
+//        // generate random num
+        num = rand()%899+100; //3 digit number  
+//        it = std::find(vec.begin(), vec.end(), num);
+//        if(it == vec.end()){
+//            cout<<num<<" ";
+            vec.push_back(num);
+//        }
+//        }while( i<SIZE || it != vec.end()); 
+        
+    }
+    for(int i=0;i<vec.size();i++){ 
+        cout<<vec[i]<<" ";
+        if(i%10==9){cout<<endl;}
+    } cout<<endl;
+
+--------------------------------------------------------------------------------
+

@@ -1,0 +1,27 @@
+With x = Probability of flipping a coin and getting a Head,
+
+and y = Probability of flipping a coin and getting a Tail,
+
+Use the binomial theorem https://medium.com/i-math/the-binomial-theorem-explained-6464f41e5268
+
+Links to an external site.
+
+to calculate the probability of flipping a coin 4 times and getting 1 tail and 3 heads.
+
+a)  Calculate using the Binomial Theorem.
+
+b)  Simulate by writing some computer code and taking statistics.
+
+      Just loop 10,000 and randomly throw a coin and sum your results to get a percentage.
+
+c)  What if you had a biased coin that would come up heads 60% of the time.
+
+     1)  Calculate the probability using the binomial theorem.
+
+     2)  Simulate the results like in b)
+
+ 
+
+In other words simulate tossing 4 coins 10000 times, use a fair coin then a biased coin.
+
+Calculate exactly the results using the binomial theorem.
