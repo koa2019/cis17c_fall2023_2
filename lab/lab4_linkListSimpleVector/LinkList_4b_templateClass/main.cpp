@@ -4,6 +4,8 @@
             * Linked from first principles v3b_templateClass	
             * Turns in from a structure to a template<class> with a structure	
      
+ * BUG:
+ * I want popFrnt(Link<int> *) to work like popFrnt(Link<int> **)
     * lnk1 is lnk1
     * lnk2 is lnk1->lnkNext
     * lnk3 is lnk1->lnkNext->lnkNext
