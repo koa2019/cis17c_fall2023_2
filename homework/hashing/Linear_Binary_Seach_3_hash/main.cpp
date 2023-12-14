@@ -1,10 +1,11 @@
 /* 
  * File:   main.cpp
  * Author: Danielle and Dr. Mark E. Lehr
- * Purpose:  v3 Implement hash 
- * hash functions taken from my bloom_filter_v3
- * Common searching and sorting algorithms
- * Binary and Linear Timing and Operational Analysis
+ * Purpose: hash v3 Implement hash 
+ * I took the hash functions from my bloom_filter_v3.
+ * 
+ * To do:
+ * locate an element once it's been hashed
  */
 
 //System Libraries Here

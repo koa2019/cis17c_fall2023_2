@@ -1,0 +1,19 @@
+2. (15 points) Stacks
+Take my hyperbolic sin/cos recursive function place the angle on a sine or cosine stack
+that represents a call to the sine or cosine. When the program returns, examine the
+stack for how many times the hyp sine was called and how many times hyp sine/cosine
+was called vs. the value you were trying to find. Put the results in a table. Range of
+values from -1 to 1 in .1 radian increments. Does the number of function calls agree with
+what you predict it should be?
+
+Grading:
+
+From Final - Each problem requires a program and some analysis. Scan the analysis by scanner or by phone. Include the analysis for each problem in a separate folder with the corresponding
+computer project.
+
+2. Stacks
+Sim -7
+Analysis -8
+Compare table output values to input?
+What do you see and why. 
+What does Theory say about recursions?
