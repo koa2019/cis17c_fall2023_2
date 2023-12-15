@@ -1,0 +1,49 @@
+
+queue <int> line; 
+    int wrkDay=8;
+    int tSec=6060;
+
+
+
+    for(int i = 0; i < 300; i++){
+
+        if(i % 15  == 0){
+           // cout<<" i is "<<i<<endl;
+
+            line.push(i);
+//            line.push(i);
+//            line.push(i);
+//            line.push(i);
+            //cout<<"front "<<line.front()<<endl;
+             cout<<"size added "<<line.size()<<endl;
+
+
+        }
+
+
+        if (i % 60 == 0 ){
+             cout<<" value popped b off "<<line.front()<<endl;
+            line.pop();
+           cout<<" value popped a off "<<line.front()<<endl; 
+        }
+
+        if (i % 80 == 0 ){
+             cout<<" value popped b off "<<line.front()<<endl;
+            line.pop();
+           cout<<" value popped a off "<<line.front();
+        }
+        if (i % 120 == 0 ){
+            cout<<" value popped b off "<<line.front()<<endl; 
+            line.pop();
+       cout<<" value popped a off "<<line.front()<<endl;
+        }
+
+         cout<<" time "<<i<<" "<<"size after "<<line.size()<<endl;
+
+    }
+
+
+   // cout<<wrkDaytSec;
+
+    return 0;
+}
