@@ -1,0 +1,8 @@
+No clerks, 3600 sec  = 241 customers in the bank.
+3 clerks,  3600 sec  = 106 customers in the bank.
+                Diff = 135 customers in the bank.
+
+
+75 sec 5 inBank, nClerk = 4
+
+180 sec 
