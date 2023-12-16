@@ -54,14 +54,13 @@ int main(int argc, char** argv) {
             num1 = rand()%10;// [0,10)  
             num2 = num1 + (rand()%50+1);// [1,50]  
         }
-        node.push_back(num2);
+        node.push_back(num2);// Push rand number into vector
         //cout<<"num2 = "<<num2<<"  node="<<node[i]<<" ";     
         avl.root = avl.insert(avl.root, num2);//(avl.root, arr[i]);
     } cout<<endl;
     
     // Print results
-    cout<<node.size()<<" random numbers:\n";
-    for(int i=0;i<node.size();i++){cout<<node[i]<<" ";}cout<<endl;
+                                                
  
     cout << endl << "Pre-order traversal of binary tree: " << endl;
     avl.preorder(avl.root);     

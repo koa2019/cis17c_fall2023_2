@@ -3,6 +3,8 @@
  * Created: 11-19-2023 @ 10:13 PM
  * Purpose: cis17C_project_1_battleship_v8
  * 
+ * This code was copied from project1 > code > 0_priorVersionsFromPrevClasses > cis17a_project_2_battleship_v9
+ *
  * Code is based off of cis17a_project_2_battleship_v9
  * 
  * version 9:

@@ -1,0 +1,52 @@
+Comments for this project:
+
+* cis17C_project_2_battleship_v1:
+ * Implemented trees -> Used AVL to fill and balance a binary tree using deque   
+ * Implemented AVLTree.h in TopPlayers.cpp, but the code broke 
+ * when i tried to moved AVLTree avl; declaration to TopPlayers.h
+  
+
+
+Comments from previous versions
+-------------------------------------------------------------------
+
+cis17C_project_1_battleship_v8 comments:
+
+* Code was copied from project1 > code > 0_priorVersionsFromPrevClasses > cis17a_project_2_battleship_v9
+ 
+ * To do: cis 17c
+ * Player destructor not going off
+ * Battleship::prntScore()
+ * Player **guessArr
+ * revert how player guesses in play(). see cis5 or cis17a prior versions.
+ * BUG! in play(). Need to create Guess board with class.
+ * maxGames should be maxHits each player can take before losing.
+ * Print game board and guess board again. See prior versions.prntScore()
+ * look for shipLoc in prior versions
+ * 
+ *  
+* To do: cis17a
+ * fix ChoicesTemplate
+ * fix bug in Battleship.h Protected & public keywords aren't diff color
+ * add 3 ships to each player's profile
+ * inherit a HighScore instance
+
+-------------------------------------------------------------------
+ 
+
+cis17a_project_2_battleship_v9 comments:
+
+ * STL Applied to Player.h: 
+    * set2Upper() that has transform to Player::setName()
+    * askName()
+    * getMin()
+  
+ * STL Applied to Player.h:
+    * deque<string>, prntDeq(),prntDeqRev()
+  
+ * STL Applied to TopPlyrBrd.h:
+    * Copied the top player functions from MySTL 
+
+ * Made setter functions  and cleaned up MySTL default contrcutor
+    * Created TopPlyrsBrd and copied appropriate MySTL functions 
+-------------------------------------------------------------------

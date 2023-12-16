@@ -1,0 +1,15 @@
+
+
+To Do:
+* Remove pause() when there's a hit.
+
+* Your project should be >750 lines of code with concepts for this month.
+
+* Extend your project with:
+    * recursions, -> 
+    * recursive sorts, 
+    * hashing, ->  
+    * trees,   -> Used AVL to fill and balance a binary tree using deque
+    * graphs   -> 
+
+* Update MySTL with deque int and deque float
