@@ -30,7 +30,9 @@ using namespace std;  //STD Name-space where Library is compiled
 int main(int argc, char** argv) {
     //Set random number seed once here
     srand(static_cast<unsigned int>(time(0)));
-    //rand()%90+10;//2 digit numbers    
+    //rand()%90+10;//2 digit numbers   
+    //(rand()%18)+99; //[99,117]
+    //(rand()%20)+(1+rand()%9); //[0,29]
     //char ch = 65+(rand()%26); //A-Z[65,90]
     
     //Declare variables here       

@@ -2,7 +2,7 @@
  * Author:  Danielle F
  * Created: 11-18-2023 @ 10:13 PM
  * Purpose: cis17a_project_2_battleship_v9
- *          I want to use this version for cis17c project 1
+ *          I want to use this version for cis17c project 1 battleship v8s
  * 
  * version 9:
  * STL Applied to Player.h: 
