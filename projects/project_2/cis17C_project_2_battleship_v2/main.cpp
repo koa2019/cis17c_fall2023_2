@@ -3,6 +3,11 @@
  * Created: 12-15-2023 @ 12 PM
  * Purpose: cis17C_project_2_battleship_v2
  *  
+ * cis17C_project_2_battleship_v1:
+ * Implemented trees -> Used AVL to fill and balance a binary tree using deque   
+ * Implemented AVLTree.h in TopPlayers.cpp, but the code broke 
+ * when i tried to moved AVLTree avl; declaration to TopPlayers.h
+   
  * To do:
         * Your project should be >750 lines of code with concepts for this month.
         * Extend your project with:

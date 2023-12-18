@@ -4,10 +4,10 @@
  * Purpose: CIS-17C Final problem 1 v3
  * 
  * v3:
+ * Pushed vector of hashes into a linked list.
+ * Counted number of collisions.
  * 
- * To do:
- * Push vector of hashes into a linked list.
- * Count number of collisions.
+ * To do: 
  * Make h2() hash with the map('A',2) instead of h1()'s switch case.
 */
 
@@ -26,19 +26,18 @@ using namespace std;  //STD Name-space where Library is compiled
 //Global Constants not Variables
 //Math/Physics/Science/Conversions/Dimensions
 
-//Function Prototypes
+// Hash Function Prototypes
 int h1(string); // Switch converts string to corresponding phone numbers
 string h2(string);
 //int h3(string);
 void setHashes(const vector<string>, vector<int> &);
 void setInitials(string &);
 void setLetters(vector<string>&);//Generate container of random 3 letter strings
-int mrkRand(int seed=0);
-void fillVec(vector<int> &);//
 void prntHashes(const vector<string>, const vector<int>);
 void prntVecStr(vector<string>);
 void prntVecInt(vector<int> &, int perLine=10);//Prints indices used in simple vector
-
+int mrkRand(int seed=0);
+void fillVec(vector<int> &);//
 
 //Code Begins Execution Here with function main
 int main(int argc, char** argv) {
@@ -46,34 +45,53 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0))); //Set random number seed once here
     //rand()%90+10;//2 digit numbers    
     
-    //Declare & initialize variables    
+   
+    //***************************************************************************
+    //              Create and Set random string container
+    //***************************************************************************
+  
+    // Create container of 512 strings that represent a person's 3-lettered initials    
     const int SIZE=512;  // size of linked list array   
     string str=" ";      // User's initials      
     vector<string> vecStr; // Container of random 3 letter strings
     vector<int> vecHash;   // Container of hashed 3 letter strings
-    int collsn0,collsn1,collsn2,collsn3;
-    collsn0=collsn1=collsn2=collsn3=0;
-    
-    // Map inputs to outputs
+    // Set random string container
     setLetters(vecStr);   // Generate container of random 3 letter strings 
     setInitials(str); //  Prompt for user's initials
     vecStr.push_back(str); // Push user's initials into container
-    setHashes(vecStr,vecHash); // Hash the container of 3 letter strings    
-    // Outputs
+    //***************************************************************************
+    
+    //***************************************************************************
+    //              Hash the container of 3 letter strings     
+    //***************************************************************************
+  
+    setHashes(vecStr,vecHash);  
+    
+    // 
     cout<<"You entered: "<<str<<endl;
     cout<<"["<<SIZE-1<<"]="<<vecStr[SIZE-1]<<"="<<vecHash[SIZE-1]<<" %512 = "<<vecHash[SIZE-1]%512<<endl<<endl;
     //cout<<"\tVector of hashed initials:\n";
-    //prntVecStr(vecStr); // Print vector of random 3 letter initials
-    //prntVecInt(vecHash);  // Print vector of  hashed initials
-    //prntHashes(vecStr,vecHash);
+    //prntVecStr(vecStr);   // Print vector of all random 3-lettered initials
+    //prntVecInt(vecHash);  // Print vector of all hashed initials
+    //prntHashes(vecStr,vecHash); // Prints each string and its hash
 
     
+    //***************************************************************************
+    //              Collision Analysis Section   
+    //***************************************************************************
+  
     int n=SIZE+1,// +1 compensates for the [0]=0 created in constructor
         num=0, 
         indx=0, 
         totlCollsion=0;  
+    int collsn0,collsn1,collsn2,collsn3; // collision counters
     vector<int> indxUsed1x;
     vector<int> iCollsions;
+    collsn0=collsn1=collsn2=collsn3=0;
+    
+    //**************************************************************************
+    //              PUSHING MOD HASHES INTO LINKED LIST
+    //**************************************************************************
     
     // Allocating  memory for a static array of Linked Lists
     SimpleVector<int> *sv;
@@ -82,27 +100,31 @@ int main(int argc, char** argv) {
     //cout<<"\nSetting Hashes in Array\n";
     vector<int>::iterator it;
     for(int i=0;i<SIZE;i++){
+        
         num=vecHash[i];//rand()%26+65;
         indx=num%SIZE;
-        //cout<<i<<". Pushing: "<<num<<".  ";
+        //cout<<i<<". Pushing: "<<num<<"%512 = "<<indx<<" \n";
         sv[indx].pushBack(num);// Save hash to linked list
         
-        // Save single copy of the indx hashes that were used to a vector
+        // Save single instance of the indx hashes that were used to a vector
         it = std::find(indxUsed1x.begin(), indxUsed1x.end(), indx);
         if(it==indxUsed1x.end()){indxUsed1x.push_back(indx); // keep track of indices used
         } else{
             iCollsions.push_back(indx);// keep track of indices that collided
             totlCollsion++;}
             
-        //cout<<i<<". ["<<indx<<"] = ";
-        //sv[indx].prntSV();  
+        cout<<setw(3)<<i<<". "<<num<<"%512 = ["<<setw(3)<<indx<<"] = "
+            <<setw(2)<< sv[indx].size()-1<<" crashes = ";
+        sv[indx].prntSV(); // print array stored in linked list 
     }
     
+    // Sorts & Prints all indexes used during hash%SIZE. NO Dupe index
     cout<<endl; 
     sort(indxUsed1x.begin(), indxUsed1x.end());
     cout<<endl<<"Index's used in SimpleVector = {\n";    
     prntVecInt(indxUsed1x,10);
     
+    // Sorts the indices that we're had collisions
     sort(iCollsions.begin(), iCollsions.end());
     //cout<<endl<<endl<<"Index's that Collided = {\n";    
     //prntVecInt(iCollsions,10);
@@ -182,7 +204,7 @@ int main(int argc, char** argv) {
 }
 
 //******************************************************************************
-//                  Function Implementations  
+//                  Hash Function Implementations  
 //******************************************************************************
 
 

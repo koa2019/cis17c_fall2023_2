@@ -16,9 +16,9 @@ TopPlyrsBrd::TopPlyrsBrd(){
     deqIntSz=10;
     cout<<"\n\nDeque default iterator is a Random Access Iterator\n";
     setDeqInt();
-    cout<<"Int Deque before shuffle:\t";
+    cout<<"Int Deque before shuffle: ";
     prntDeqInt();
-    cout<<"Int Deque after  shuffle:\t";
+    cout<<"Int Deque after  shuffle: ";
     shuffleThis(deqIndx);
     prntDeqInt();
     //pause();
@@ -38,7 +38,7 @@ TopPlyrsBrd::TopPlyrsBrd(){
         //cout<<i<<" ";
         avl.root = avl.insert(avl.root, i);//(avl.root, arr[i]);
     } //cout<<endl;    
-    cout<<"AVL In-order Traversal: \t";
+    cout<<"AVL In-order Traversal: ";
     avl.inorder(avl.root);
     
     // Insert 5 random numbers into binary tree
@@ -52,73 +52,98 @@ TopPlyrsBrd::TopPlyrsBrd(){
         avl.root = avl.insert(avl.root, num2);//(avl.root, arr[i]);
     } cout<<endl;
     
-    cout<<"\nInserted "<<node.size()<<" nodes:\n";
+    cout<<"\nInserted "<<node.size()<<" nodes in AVL Tree:\n";
     for(int i=0;i<node.size();i++){cout<<node[i]<<" ";}
-    cout<<endl<< "Inserted 5 nodes into binary tree: "<<endl;
+    cout<<endl<< "Inserted 5 nodes into AVL tree: "<<endl;
     avl.inorder(avl.root); 
     int height = avl.height(avl.root);
     num1 = rand()%height;// [0,10)
-    cout<<endl<<"Binary Tree height: "<<height<<endl;
-    
-    for(int i=0;i<height;i++){
+    cout<<"\n\nAVL Tree height: "<<height<<endl;
+    cout<<"Left is smaller than right side\n";
+    for(int i=1;i<=height;i++){
         cout<<endl<<"Level: "<<i<<" = ";
         avl.prntLev(avl.root,i);
     }
+    cout<<endl<<endl<<"Dr. Lehr I was only able to implement AVL Tree\n"
+        <<"because I wasted hours trying to make a recursive \n"
+        <<"quick_sort() work with Simple Vectors Linked List and\n"
+        <<"a float deque work with my AVL Tree.\n"
+        <<"You can find this code in TopPlyrsBrd.cpp line 30. Sorry :/\n";
+    cout<<endl<<endl;
+    pause();
     
-//    // ******************************************
-//    //           deque float section
-//    // ******************************************
-//    deqFltSz=10;
-//    cout<<"\n\nDeque default iterator is a Random Access Iterator\n";
-//    setDeqFlt();
-//    cout<<"Float Deque before shuffle:\n";
-//    prntDeqFlt();
+    // ******************************************
+    //           deque float section
+    // ******************************************
+    deqFltSz=10;
+    cout<<"\n\nDeque default iterator is a Random Access Iterator\n";
+    setDeqFlt();
+    cout<<"Float Deque before shuffle:\n";
+    prntDeqFlt();
 //    cout<<"Float Deque after shuffle:\n";
 //    shuffleThis(deqFlt);
 //    prntDeqFlt();
-//    //pause();
+    cout<<endl<<endl;
+    pause();
     
     
 
     
     
     
-//    // Initialize set with a list of fnames 
-//    cout<<"Pushed array into a List.\n";
-//    setSet();// first names 
-//    fnSize=fnames.size();
-//    cout<<"Copied a List into a Set.\n";
-//    cout<<"Unsorted Set of Players: \n";
-//    prntSetStr(fnames);
-//    //pause();     
-//    
-//  
-//    // Insert player 1 name into a set
-//    cout<<"\nInserted "<<name<<" into a Set.\n";
-//    fnames.insert(name);
-//    cout<<"Unsorted Set of Players: \n";
-//    prntSetStr(fnames);    
-//    //pause();
-//     
-//    
-//    // Stack
-//    cout<<"\n\nPush List into Stack.\n";
-//    // player 2 fnames to mimic playing someone online
-//    list<string> list{"Donald Duck", "Mickey", "Chip", "Smurfette", "Dale", "Yoda", "Jerry Rice"};
-//    cout<<"List of names\n";
-//    prntListStr(list);
-//    setStack(list);//(stack,list);// setStack(stack&,list)    
-//    cout<<"Stack (Last In First Out).\n";
-//    prntStckFIFO();
-//    cout<<"\nReverse Order Stack.\n";
-//    prntStckRev();
-//    //pause();
-//           
-//    
-//    // Sets, lists, maps 
-//    setTopPlyrs(); 
-//    getTopPlyrs();// Initialize unordered map with pair(topPlyrs,scores)    
-//    //pause();        
+    // Initialize set with a list of fnames 
+    cout<<"Pushed array into a List.\n";
+    setSet();// first names 
+    fnSize=fnames.size();
+    //    cout<<"Copied a List into a Set.\n";
+    //    cout<<"Unsorted Set of Players: \n";
+    //    prntSetStr(fnames);
+    //    //pause();     
+    
+  
+    // Insert player 1 name into a set
+    cout<<"\nInserted "<<name<<" into a Set.\n";
+    fnames.insert(name);
+    //cout<<"Unsorted Set of Players: \n";
+    //prntSetStr(fnames);    
+    //pause();
+   
+    
+    // Stack
+    cout<<"\n\nPush List into Stack.\n";
+    // player 2 fnames to mimic playing someone online
+    list<string> list{"Donald Duck", "Mickey", "Chip", "Smurfette", "Dale", "Yoda", "Jerry Rice"};
+    cout<<"List of names\n";
+    prntListStr(list);
+    setStack(list);//(stack,list);// setStack(stack&,list)    
+    // cout<<"Stack (Last In First Out).\n";
+    // prntStckFIFO();
+    // cout<<"\nReverse Order Stack.\n";
+    // prntStckRev();
+    // //pause();
+               
+    // Sets, lists, maps 
+    setTopPlyrs(); 
+    getTopPlyrs();// Initialize unordered map with pair(topPlyrs,scores)    
+    //pause();  
+    run();
+    cout<<endl<<endl;
+}
+void TopPlyrsBrd::run(){
+    cout<<"Copied a List into a Set.\n";
+    cout<<"Unsorted Set of Players: \n";
+    prntSetStr(fnames);
+    //pause();   
+    
+    cout<<"Unsorted Set of Players: \n";
+    prntSetStr(fnames);    
+    //pause();
+        
+    cout<<"Stack (Last In First Out).\n";
+    prntStckFIFO();
+    cout<<"\nReverse Order Stack.\n";
+    prntStckRev();
+    //pause();
 }
 
 /*****************************************************************/
@@ -174,8 +199,8 @@ void TopPlyrsBrd::getTopPlyrs(){
     // Searches for a top player's name and returns this standing
     string sName="marty";
     cout<<endl<<endl<<"Enter a player's name to return\nwhat place they're in this week.\n";
-    //cin>>sName; 
-    //cin.ignore(); 
+    cin>>sName; 
+    cin.ignore(); 
     cout<<endl;        
    
     // Find name in top scores board    

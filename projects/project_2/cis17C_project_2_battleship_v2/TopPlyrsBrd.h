@@ -11,7 +11,7 @@ using namespace std;  //STD Name-space where Library is compiled
 class TopPlyrsBrd {    
 protected: 
     
-    //AVLTree avl;
+    //AVLTree avl; //Breaks it
     // deque member variables
     int deqFltSz;    // size of array.  Used with AVL.h
     deque<float> deqFlt;// index array. Used with AVL.h    
@@ -30,6 +30,7 @@ public:
     
     TopPlyrsBrd();//Default Constructor
     virtual ~TopPlyrsBrd(){cout<<"\nHit TopPlyrsBrd Destructor";} 
+    void run();
     
     // deque member functions
     void setDeqInt(); // sets an index container
