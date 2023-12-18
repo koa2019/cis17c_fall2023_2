@@ -49,7 +49,9 @@ int main(int argc, char** argv) {
     vector<int> node;
     
     // Fill tree with random numbers    
-    for(int i=0;i<SIZE;i++){        
+    for(int i=0;i<SIZE;i++){    
+
+        // Generate random numbers to push into tree. Ideally no dupes    
         for(int j=0;j<7;j++){//shuffle so i hopefully dont get duplicates
             num1 = rand()%10;// [0,10)  
             num2 = num1 + (rand()%50+1);// [1,50]  
